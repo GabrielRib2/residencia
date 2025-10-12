@@ -1,142 +1,166 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ações Registradas</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
     <div class="container">
-        <aside class="sidebar">
-            <div class="logo">
-                <h1>Menu Principal</h1>
-            </div>
-            <nav class="nav-menu">
-                <ul>
-                    <li><a href="../home/home.html"><i class="fas fa-home"></i> Dashboard</a></li>
-                    <li><a href="../acoes/acoes.html"><i class="fas fa-chart-line"></i> Ações</a></li>
-                    <li><a href="../kanban/kanban.html"><i class="fas fa-tasks"></i> Gestão de Tarefas</a></li>
-                    <li><a href="#"><i class="fas fa-dollar-sign"></i> Financeiro</a></li>
-                    <li><a href="#"><i class="fas fa-cog"></i> Configurações</a></li>
-                </ul>
-            </nav>
-            <div class="logout">
-                <a href="#"><i class="fas fa-sign-out-alt"></i> Sair</a>
-            </div>
-        </aside>
+      <aside class="sidebar">
+        <div class="logo">
+          <h1>Menu Principal</h1>
+        </div>
+        <nav class="nav-menu">
+          <ul>
+            <li>
+              <a href="../home/home.html"
+                ><i class="fas fa-home"></i> Dashboard</a
+              >
+            </li>
+            <li>
+              <a href="../acoes/acoes.html"
+                ><i class="fas fa-chart-line"></i> Ações</a
+              >
+            </li>
+            <li>
+              <a href="../kanban/kanban.html"
+                ><i class="fas fa-tasks"></i> Gestão de Tarefas</a
+              >
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-dollar-sign"></i> Financeiro</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-cog"></i> Configurações</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="logout">
+          <a href="../login/login.html"
+            ><i class="fas fa-sign-out-alt"></i> Sair</a
+          >
+        </div>
+      </aside>
 
-        <main class="main-content">
-            <header class="header">
-                <div class="header-title">
-                    <i class="fas fa-chart-line"></i>
-                    <h2>Ações Registradas</h2>
-                </div>
-                <p>Visualize e Gerencie as ações realizadas</p>
-                <div></div> </header>
+      <main class="main-content">
+        <header class="header">
+          <div class="header-title">
+            <i class="fas fa-chart-line"></i>
+            <h2>Ações Registradas</h2>
+          </div>
+          <p>Visualize e Gerencie as ações realizadas</p>
+          <div></div>
+        </header>
 
-            <section class="acoes-registradas-content">
-                <div class="registration-info">
-                                    </div>
+        <section class="acoes-registradas-content">
+          <div class="registration-info"></div>
 
-                <div class="table-container">
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>Cidade</th>
-                                <th>Bairro</th>
-                                <th>Tipo da Ação</th>
-                                <th>Data</th>
-                                <th>Opções</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Aracaju</td>
-                                <td>Santos Dumont</td>
-                                <td>Evento</td>
-                                <td>22/07/2025</td>
-                                <td>
-                                    <i class="fas fa-edit edit-icon"></i>
-                                    <i class="fas fa-trash-alt trash-icon"></i>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Lagarto</td>
-                                <td>Centro</td>
-                                <td>Reunião com Liderança</td>
-                                <td>12/08/2025</td>
-                                <td>
-                                    <i class="fas fa-edit edit-icon"></i>
-                                    <i class="fas fa-trash-alt trash-icon"></i>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Itabaiana</td>
-                                <td>Campo Grande</td>
-                                <td>Evento</td>
-                                <td>01/08/2025</td>
-                                <td>
-                                    <i class="fas fa-edit edit-icon"></i>
-                                    <i class="fas fa-trash-alt trash-icon"></i>
-                                </td>
-                            </tr>
-                             <tr>
-                                <td>Aracaju</td>
-                                <td>Farolândia</td>
-                                <td>Reunião com Liderança</td>
-                                <td>08/08/2025</td>
-                                <td>
-                                    <i class="fas fa-edit edit-icon"></i>
-                                    <i class="fas fa-trash-alt trash-icon"></i>
-                                </td>
-                            </tr>
-                             <tr>
-                                <td>Aracaju</td>
-                                <td>Siqueira Campos</td>
-                                <td>Visita Técnica</td>
-                                <td>17/10/2025</td>
-                                <td>
-                                    <i class="fas fa-edit edit-icon"></i>
-                                    <i class="fas fa-trash-alt trash-icon"></i>
-                                </td>
-                            </tr>
-                             <tr>
-                                <td>Aracaju</td>
-                                <td>Grageru</td>
-                                <td>Reunião com Liderança</td>
-                                <td>27/10/2025</td>
-                                <td>
-                                    <i class="fas fa-edit edit-icon"></i>
-                                    <i class="fas fa-trash-alt trash-icon"></i>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Cidade</th>
+                  <th>Bairro</th>
+                  <th>Tipo da Ação</th>
+                  <th>Data</th>
+                  <th>Opções</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Aracaju</td>
+                  <td>Santos Dumont</td>
+                  <td>Evento</td>
+                  <td>22/07/2025</td>
+                  <td>
+                    <i class="fas fa-edit edit-icon"></i>
+                    <i class="fas fa-trash-alt trash-icon"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Lagarto</td>
+                  <td>Centro</td>
+                  <td>Reunião com Liderança</td>
+                  <td>12/08/2025</td>
+                  <td>
+                    <i class="fas fa-edit edit-icon"></i>
+                    <i class="fas fa-trash-alt trash-icon"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Itabaiana</td>
+                  <td>Campo Grande</td>
+                  <td>Evento</td>
+                  <td>01/08/2025</td>
+                  <td>
+                    <i class="fas fa-edit edit-icon"></i>
+                    <i class="fas fa-trash-alt trash-icon"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Aracaju</td>
+                  <td>Farolândia</td>
+                  <td>Reunião com Liderança</td>
+                  <td>08/08/2025</td>
+                  <td>
+                    <i class="fas fa-edit edit-icon"></i>
+                    <i class="fas fa-trash-alt trash-icon"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Aracaju</td>
+                  <td>Siqueira Campos</td>
+                  <td>Visita Técnica</td>
+                  <td>17/10/2025</td>
+                  <td>
+                    <i class="fas fa-edit edit-icon"></i>
+                    <i class="fas fa-trash-alt trash-icon"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Aracaju</td>
+                  <td>Grageru</td>
+                  <td>Reunião com Liderança</td>
+                  <td>27/10/2025</td>
+                  <td>
+                    <i class="fas fa-edit edit-icon"></i>
+                    <i class="fas fa-trash-alt trash-icon"></i>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
-                <div class="pagination">
-                    <span>1</span>
-                    <a href="#">2</a>
-                    <a href="#">3</a>
-                    <span>...</span>
-                    <a href="#">67</a>
-                    <a href="#">68</a>
-                    <a href="#">Próximo &rarr;</a>
-                </div>
-            </section>
+          <div class="pagination">
+            <span>1</span>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <span>...</span>
+            <a href="#">67</a>
+            <a href="#">68</a>
+            <a href="#">Próximo &rarr;</a>
+          </div>
+        </section>
 
-            <div class="action-buttons-footer">
-                <a href="../acoes/acoes.html" class="action-btn back-btn">
-                    &larr; Voltar para o mapa
-                </a>
-    <a href="../registrar_acoes/registrar_acoes.html" class="action-btn register-btn">
-        + Registrar uma Ação
-    </a>
-            </div>
-        </main>
+        <div class="action-buttons-footer">
+          <a href="../acoes/acoes.html" class="action-btn back-btn">
+            &larr; Voltar para o mapa
+          </a>
+          <a
+            href="../registrar_acoes/registrar_acoes.html"
+            class="action-btn register-btn"
+          >
+            + Registrar uma Ação
+          </a>
+        </div>
+      </main>
     </div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

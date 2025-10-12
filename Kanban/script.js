@@ -5,12 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const taskForm = document.getElementById('taskForm');
     const taskLists = document.querySelectorAll('.task-list');
 
-    // Abre o modal
-    newTaskBtn.addEventListener('click', () => {
-        taskModal.style.display = 'flex';
-    });
-
-    // Fecha o modal
     closeBtn.addEventListener('click', () => {
         taskModal.style.display = 'none';
     });
