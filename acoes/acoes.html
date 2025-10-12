@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ações</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <h1>Menu Principal</h1>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="../home/home.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li class="active"><a href="#"><i class="fas fa-chart-line"></i> Ações</a></li>
+                    <li><a href="../kanban/kanban.html"><i class="fas fa-tasks"></i> Gestão de Tarefas</a></li>
+                    <li><a href="#"><i class="fas fa-dollar-sign"></i> Financeiro</a></li>
+                    <li><a href="#"><i class="fas fa-cog"></i> Configurações</a></li>
+                </ul>
+            </nav>
+            <div class="logout">
+                <a href="#"><i class="fas fa-sign-out-alt"></i> Sair</a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <div class="header-title">
+                    <i class="fas fa-chart-line"></i>
+                    <h2>Ações</h2>
+                </div>
+                <p>Visualize e Gerencie as ações realizadas</p>
+                <div></div> </header>
+
+            <section class="acoes-content">
+                <div class="map-container">
+                    <div class="map-embed">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15667.504997054773!2d-37.060698890601216!3d-10.972712336312453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1760269406667!5m2!1spt-BR!2sbr" 
+                            width="40%" 
+                            height="400" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                        
+                        <div class="map-controls">
+                            <button><i class="fas fa-search-plus"></i></button>
+                            <button><i class="fas fa-search-minus"></i></button>
+                            <button><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="visualizar-acoes-btn">Visualizar Ações</button>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

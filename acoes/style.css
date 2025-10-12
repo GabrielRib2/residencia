@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #2c3e50;    /* Azul escuro da sidebar */
+    --secondary-color: #ecf0f1;  /* Fundo claro do conteúdo principal */
+    --text-color: #2c3e50;       /* Cor principal do texto */
+    --light-text: #bdc3c7;       /* Cor do texto normal da sidebar */
+    --active-color: #ffffff;     /* Cor do texto ativo */
+    --background-color: #ecf0f1;
+    --card-background: #ffffff;  /* Cor de fundo dos cards e headers */
+}
+
+/* --- ESTILOS GERAIS E RESET --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* --- BARRA LATERAL (SIDEBAR) --- */
+.sidebar {
+    width: 250px;
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0; /* Ajustado para padding horizontal ser dado pelo 'a' */
+}
+
+.sidebar .logo {
+    padding: 0 20px 20px 20px;
+    border-bottom: 1px solid #34495e;
+    margin-bottom: 10px;
+}
+
+.sidebar .logo h1 {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--active-color);
+}
+
+.nav-menu {
+    flex-grow: 1;
+}
+
+.nav-menu ul {
+    list-style: none;
+}
+
+.nav-menu li {
+    margin-bottom: 0;
+}
+
+.nav-menu a {
+    color: var(--light-text);
+    text-decoration: none;
+    padding: 12px 20px;
+    display: flex; /* Para alinhar o ícone e o texto */
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.nav-menu a:hover, .nav-menu li.active a {
+    background-color: #34495e;
+    color: var(--active-color);
+    /* Borda lateral azul claro para indicar ativo (opcional) */
+    /* border-left: 4px solid #3498db; 
+    padding-left: 16px; */
+}
+
+.nav-menu li.active a {
+    color: var(--active-color);
+    background-color: #34495e;
+}
+
+.nav-menu i {
+    margin-right: 10px;
+    width: 20px; /* Para garantir alinhamento vertical dos ícones */
+    text-align: center;
+}
+
+.logout {
+    margin-top: auto;
+    padding: 20px;
+    border-top: 1px solid #34495e;
+}
+
+.logout a {
+    color: var(--light-text);
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.logout a:hover {
+    background-color: #c0392b; /* Vermelho escuro para sair */
+}
+
+/* --- CONTEÚDO PRINCIPAL (MAIN) --- */
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.header {
+    background-color: var(--card-background);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-title i {
+    color: var(--primary-color);
+    font-size: 1.5em;
+}
+
+.header-title h2 {
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.header p {
+    color: #7f8c8d;
+    font-size: 1em;
+    flex-grow: 1;
+    margin-left: 15px; /* Espaço entre o título e a descrição */
+}
+
+/* Garante que o terceiro elemento do header (vazio) não afete o layout */
+.header > div:last-child {
+    min-width: 0;
+}
+
+/* --- ESTILOS ESPECÍFICOS DA PÁGINA "AÇÕES" --- */
+
+.acoes-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.map-container {
+    background-color: var(--card-background);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.map-embed {
+    position: relative;
+    height: 600px; /* Altura que o iframe deve ocupar */
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.map-embed iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 4px;
+}
+
+/* Estilo para os botões de simulação de zoom, sobrepostos ao mapa */
+.map-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    gap: 5px;
+    z-index: 10;
+}
+
+.map-controls button {
+    background: #f4f4f4;
+    border: 1px solid #ccc;
+    color: #333;
+    padding: 8px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.2s;
+}
+
+.map-controls button:hover {
+    background-color: #ddd;
+}
+
+.visualizar-acoes-btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1em;
+    width: 250px;
+    transition: background-color 0.3s;
+}
+
+.visualizar-acoes-btn:hover {
+    background-color: #34495e;
+}
