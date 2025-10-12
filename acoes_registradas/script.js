@@ -25,15 +25,4 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-
-    // Lógica para o botão Registrar
-    const registerBtn = document.querySelector('.register-btn');
-    if (registerBtn) {
-        registerBtn.addEventListener('click', function() {
-            alert('+ Registrar uma Ação: Abrir formulário de cadastro.');
-            // Adicionar aqui a lógica real de navegação para o formulário de registro
-        });
-    }
-    
-    // Nota: O botão "Voltar para o mapa" é um <a> e usa o href, então não precisa de JS.
 });
