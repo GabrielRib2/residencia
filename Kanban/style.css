@@ -289,4 +289,16 @@ body {
 
 .modal-content form button:hover {
     background-color: #27ae60;
+}/* Estilo do Modal */
+.modal {
+    display: none; /* ESSENCIAL: O JavaScript muda isso para 'flex' */
+    position: fixed;
+    z-index: 1000; /* Garante que fique acima de todos os elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
 }

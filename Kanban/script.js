@@ -126,3 +126,70 @@ document.addEventListener('DOMContentLoaded', () => {
     // Chamada inicial para atualizar a contagem
     updateTaskCount();
 });
+// Seletores do modal de edição
+    const editModal = document.getElementById('editModal');
+    const editCloseBtn = document.querySelector('.edit-close-btn');
+    const editForm = document.getElementById('editForm');
+    const editTaskNameInput = document.getElementById('editTaskName');
+    const editTaskDateInput = document.getElementById('editTaskDate');
+    let taskToEdit = null; // Variável para armazenar a tarefa sendo editada
+    // No início do script.js
+    const taskModal = document.getElementById('taskModal');
+    const taskNameInput = document.getElementById('taskName');
+    const taskDateInput = document.getElementById('taskDate');
+    // ... e assim por diante.
+    document.addEventListener('DOMContentLoaded', () => {
+    // --- Variáveis de Seleção (Confirme que estão aqui) ---
+    const taskModal = document.getElementById('taskModal');
+    const taskNameInput = document.getElementById('taskName');
+    const taskDateInput = document.getElementById('taskDate');
+    const taskForm = document.getElementById('taskForm');
+    const taskLists = document.querySelectorAll('.task-list');
+    let taskToEdit = null;
+
+    // ... (Mantenha todas as funções de abrir/fechar e a lógica de SUBMIT) ...
+
+    // --- LÓGICA DE CLIQUE (LIXEIRA E LÁPIS) ---
+    document.addEventListener('click', (e) => {
+        const target = e.target;
+
+        // LÓGICA DE DELETAR (LIXEIRA)
+        if (target.classList.contains('trash-icon')) {
+            target.closest('.task-card').remove();
+            updateTaskCount();
+        }
+
+        // LÓGICA DE EDITAR (LÁPIS) - FOCO NA EDIÇÃO
+        if (target.classList.contains('edit-icon')) {
+            // Se o target for o ícone de lápis
+            e.preventDefault(); // Impede qualquer ação padrão
+
+            // 1. Encontra o card pai da tarefa e o armazena
+            taskToEdit = target.closest('.task-card');
+            
+            // 2. Configura o modal para o modo "Edição"
+            taskModal.querySelector('h2').textContent = 'Editar Tarefa';
+            taskModal.querySelector('button[type="submit"]').textContent = 'Salvar Alterações';
+
+            // 3. Preenche os campos do formulário
+            taskNameInput.value = taskToEdit.querySelector('.task-name').textContent;
+            
+            // Lógica de conversão de data (DD/MM para YYYY-MM-DD)
+            const taskDateText = taskToEdit.querySelector('.task-date').textContent.trim().replace('📅 ', '').replace('Sem prazo', '');
+            if (taskDateText) {
+                const [day, month] = taskDateText.split('/');
+                const currentYear = new Date().getFullYear(); 
+                taskDateInput.value = `${currentYear}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
+            } else {
+                taskDateInput.value = '';
+            }
+
+            // 4. Torna o modal visível
+            // Se o modal não abrir, esta linha é a principal suspeita.
+            taskModal.style.display = 'flex'; 
+        }
+    });
+
+    // ... (Mantenha as funções createTaskCard, updateTaskCount, Drag & Drop, etc.) ...
+});
+    
