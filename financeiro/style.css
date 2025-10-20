@@ -458,3 +458,86 @@ body {
 .salvar-btn:hover {
     background-color: #2980b9;
 }
+/* --- ESTILOS PARA O HISTÓRICO DE TRANSAÇÕES (ACORDEÃO) --- */
+
+.historico-transacoes-container {
+    background-color: var(--card-background);
+    padding: 20px 30px 30px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; /* Espaçamento abaixo do formulário */
+}
+
+.historico-transacoes-container h3 {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.acordeao-item {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    overflow: hidden; /* Importante para o efeito de expansão */
+}
+
+.acordeao-header {
+    background-color: #f7f7f7;
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 15px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.acordeao-header:hover {
+    background-color: #eee;
+}
+
+.acordeao-valor {
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.acordeao-icon {
+    transition: transform 0.3s ease;
+}
+
+/* Estado Ativo: Gira o ícone para cima */
+.acordeao-header.active .acordeao-icon {
+    transform: rotate(180deg);
+}
+
+.acordeao-body {
+    padding: 0 15px;
+    background-color: white;
+    max-height: 0; /* ESSENCIAL: Mantém minimizado por padrão */
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+}
+
+/* Estilos dos detalhes da transação */
+.transacao-detalhes {
+    list-style: none;
+    padding: 10px 0;
+}
+
+.transacao-detalhes li {
+    padding: 5px 0;
+    border-bottom: 1px dashed #f0f0f0;
+    font-size: 0.9em;
+}
+
+.transacao-detalhes li span:first-child {
+    font-weight: 500;
+    color: #7f8c8d;
+    margin-right: 5px;
+}

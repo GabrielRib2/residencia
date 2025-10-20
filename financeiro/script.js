@@ -63,3 +63,118 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+document.addEventListener('DOMContentLoaded', function() {
+    // ... (Seu código JavaScript existente aqui: máscara, exportar, salvar) ...
+
+    // =======================================================
+    // --- LÓGICA DO ACORDEÃO (Histórico de Transações) ---
+    // =======================================================
+    const acordeaoHeaders = document.querySelectorAll('.acordeao-header');
+
+    acordeaoHeaders.forEach(header => {
+        header.addEventListener('click', function() {
+            // Pega o corpo da lista que deve ser expandida/recolhida
+            const body = this.nextElementSibling;
+            
+            // 1. Alterna a classe 'active' no header (para girar o ícone)
+            this.classList.toggle('active');
+
+            // 2. Expande ou recolhe o corpo
+            if (body.style.maxHeight) {
+                // Se estiver aberto, fecha
+                body.style.maxHeight = null;
+                body.style.padding = '0 15px'; // Remove o padding vertical ao fechar
+            } else {
+                // Se estiver fechado, abre. 
+                // Define maxHeight para a altura total do conteúdo
+                body.style.maxHeight = body.scrollHeight + "px";
+                body.style.padding = '15px'; // Adiciona o padding vertical ao abrir
+            }
+            
+            // Opcional: Fecha todos os outros itens abertos
+            // closeOtherAcordeons(this);
+        });
+    });
+
+    // Função opcional para fechar os outros (melhora a usabilidade)
+    function closeOtherAcordeons(currentHeader) {
+        acordeaoHeaders.forEach(header => {
+            if (header !== currentHeader && header.classList.contains('active')) {
+                header.classList.remove('active');
+                const body = header.nextElementSibling;
+                body.style.maxHeight = null;
+                body.style.padding = '0 15px';
+            }
+        });
+    }
+
+    // ... (Seu código JavaScript existente continua aqui) ...
+});
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // ... (Seu código JavaScript existente: Máscara, Salvar, Acordeão) ...
+
+    const exportBtn = document.getElementById('exportBtn');
+    const registroForm = document.getElementById('registroFinanceiroForm');
+
+    // -----------------------------------------------------------------
+    // --- FUNÇÃO DE EXPORTAÇÃO PARA CSV (EXCEL) ---
+    // -----------------------------------------------------------------
+    function exportToCSV() {
+        const now = new Date();
+        const dateStr = now.toLocaleDateString('pt-BR').replace(/\//g, '-');
+        const timeStr = now.toLocaleTimeString('pt-BR').replace(/:/g, '-');
+        
+        // Coleta os campos de interesse e seus rótulos
+        const fields = [
+            { id: 'dataRegistro', label: 'Data de Registro' },
+            { id: 'valorLocacao', label: 'Valor da Locação do Imóvel' },
+            { id: 'valorJuridica', label: 'Valor da Assessoria Jurídica' },
+            { id: 'valorComunicacao', label: 'Valor da Assessoria de Comunicação' },
+            { id: 'valorCombustivel', label: 'Valor do Combustível' },
+            { id: 'despesasDebito', label: 'Despesas do Débito' },
+            { id: 'despesasCredito', label: 'Despesas no Crédito' },
+            { id: 'outrasDespesas', label: 'Outras Despesas' },
+        ];
+
+        // 1. Gera o Cabeçalho (Rótulos)
+        const header = fields.map(f => `"${f.label}"`).join(';');
+        
+        // 2. Gera os Dados (Valores do Formulário)
+        const dataRow = fields.map(f => {
+            const input = document.getElementById(f.id);
+            // Remove aspas e quebras de linha que poderiam quebrar o CSV
+            let value = input ? input.value.replace(/"/g, '""') : '';
+            return `"${value}"`;
+        }).join(';');
+
+        // Constrói o conteúdo CSV completo
+        const csvContent = "data:text/csv;charset=utf-8," + encodeURIComponent(header + '\n' + dataRow);
+
+        // 3. Cria um link temporário para download
+        const link = document.createElement('a');
+        link.setAttribute('href', csvContent);
+        // Define o nome do arquivo para download
+        link.setAttribute('download', `RegistroFinanceiro_${dateStr}_${timeStr}.csv`);
+
+        // 4. Simula o clique e remove o link
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        
+        alert('Dados financeiros exportados com sucesso para CSV!');
+    }
+    
+    // --- ATUALIZAÇÃO DO BOTÃO EXPORTAR ---
+    if (exportBtn) {
+        exportBtn.addEventListener('click', function(e) {
+            e.preventDefault(); // Impede qualquer ação padrão do botão
+            
+            // Em vez de abrir o seletor de arquivos, exportamos para CSV
+            exportToCSV();
+        });
+    }
+
+    // ... (O restante da sua lógica JavaScript continua aqui: Salvar, Máscara, Acordeão) ...
+
+});
