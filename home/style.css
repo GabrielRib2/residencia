@@ -29,6 +29,12 @@ body {
     height: 100vh;
 }
 
+/* --- BARRA LATERAL (SIDEBAR) --- */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
 .sidebar {
     width: 250px;
     background-color: var(--primary-color);
@@ -201,4 +207,134 @@ body {
 
 .progress-card {
     grid-column: span 2;
+}
+/* Variáveis de Cores (Ajuste ou mantenha suas variáveis existentes) */
+:root {
+    --primary-color: #2c3e50;    /* Azul escuro da sidebar */
+    --secondary-color: #ecf0f1;  /* Fundo principal */
+    --text-color: #2c3e50;       /* Cor principal do texto */
+    --light-text: #bdc3c7;       
+    --active-color: #ffffff;     
+    --background-color: #f5f7fa; /* Fundo levemente mais claro que o padrão anterior */
+    --card-background: #ffffff;  /* Fundo dos cards */
+    --done-color: #2ecc71;       /* Verde - Tarefa Concluída/Sucesso (Gráficos) */
+    --in-progress-color: #f1c40f;/* Amarelo - Em Andamento (Gráficos) */
+    --todo-color: #3498db;       /* Azul - A Fazer (Gráficos) */
+}
+
+/* --- ESTILOS GERAIS E LAYOUT (Revisados para modernização) --- */
+
+/* ... (Mantenha o CSS da sidebar e container que já está no seu projeto) ... */
+
+
+/* CONTEÚDO PRINCIPAL (MAIN) e HEADER - Mantendo o padrão */
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.header {
+    background-color: var(--card-background);
+    padding: 20px;
+    border-radius: 12px; /* Borda mais suave */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Sombra mais destacada */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+/* --- ESTILOS ESPECÍFICOS DO DASHBOARD --- */
+
+.dashboard-panel {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr; /* Ajusta o layout para 2 colunas */
+    gap: 20px;
+    flex-grow: 1;
+}
+
+.card {
+    background-color: var(--card-background);
+    padding: 30px; /* Padding um pouco maior para respiro */
+    border-radius: 12px; /* Borda suave */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Sombra suave para profundidade */
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-2px); /* Efeito sutil ao passar o mouse */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    margin-bottom: 20px;
+    font-size: 1.25em;
+    font-weight: 600; /* Levemente mais fino */
+    color: var(--primary-color);
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+/* Layout de Status das Tarefas */
+.status-card {
+    grid-column: span 1; 
+}
+
+.status-chart {
+    display: flex;
+    align-items: center;
+    gap: 25px; /* Aumenta o espaço */
+    padding-top: 10px;
+}
+
+.status-chart canvas {
+    max-width: 130px; /* Gráfico de rosca ligeiramente menor */
+    min-width: 130px;
+}
+
+.status-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Mais espaço entre os itens */
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.status-bar {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%; /* Transforma o marcador em círculo */
+    min-width: 15px;
+}
+
+.status-label {
+    font-weight: 700;
+    width: 40px;
+}
+
+.status-text {
+    color: #555;
+    font-weight: 400;
+}
+
+/* Gráfico de Progresso (Barra Inferior) */
+.progress-card {
+    grid-column: span 2; /* Ocupa as duas colunas */
+    min-height: 350px;
+}
+
+/* Gráfico de Tarefas por Responsável */
+.responsible-card {
+    grid-column: span 1;
+}
+
+.responsible-card canvas {
+    max-height: 280px;
 }
