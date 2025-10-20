@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela de Login</title>
+    <title>Login</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
@@ -15,23 +13,26 @@
         <h2 class="login-title">Login</h2>
         
         <form class="login-form">
+            
             <div class="input-group">
                 <label for="cpf">CPF</label>
-                <input type="text" id="cpf" name="cpf" placeholder="CPF">
+                <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00">
             </div>
             
             <div class="input-group">
                 <label for="senha">Senha</label>
-                <input type="password" id="senha" name="senha" placeholder="Senha">
+                <div class="password-group">
+                    <input type="password" id="senha" name="senha" placeholder="********">
+                    <i class="fas fa-eye toggle-password" data-target="senha"></i>
+                </div>
             </div>
             
             <button type="submit" class="login-button">Login</button>
 
-
-            <a href="registro.html" class="Registre-se">Não possui uma conta? Registre-se</a>
-
+            <a href="#" class="register-link">Não possui uma conta? <span class="highlight">Registre-se</span></a>
         </form>
     </div>
 
+    <script src="script.js"></script>
 </body>
 </html>
