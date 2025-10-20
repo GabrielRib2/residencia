@@ -459,3 +459,113 @@ body {
 .task-icons i:hover {
     color: var(--primary-color);
 }
+/* --- ESTILOS ESPECÍFICOS DA TELA NOVA TAREFA (GLOW UP) --- */
+
+.main-content {
+    background-color: var(--background-color, #f5f7fa); /* Fundo mais suave */
+}
+
+/* Header (Mantido o padrão de borda suave do Kanban) */
+.header {
+    /* Reutiliza o estilo de card/header suave do kanban */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    /* Mantém o padding, títulos e breadcrumb */
+}
+
+/* Container do Formulário */
+.form-container {
+    background-color: var(--card-background);
+    padding: 35px; /* Aumenta um pouco o padding para mais respiro */
+    border-radius: 12px; /* Borda suave */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Sombra sutil */
+    flex-grow: 1;
+}
+
+.nova-tarefa-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Aumenta o espaçamento entre os grupos de campos */
+}
+
+.nova-tarefa-form label {
+    font-weight: 600; /* Deixa o rótulo um pouco mais forte */
+    margin-bottom: 8px; /* Mais espaço abaixo do rótulo */
+    color: var(--text-color);
+    font-size: 0.95em;
+    display: block;
+}
+
+/* Estilo dos Inputs */
+.nova-tarefa-form input[type="text"],
+.nova-tarefa-form input[type="date"],
+.nova-tarefa-form textarea {
+    padding: 14px; /* Aumenta a altura dos campos */
+    border: 1px solid #e0e0e0;
+    border-radius: 8px; /* Borda mais suave */
+    font-size: 1em;
+    width: 100%;
+    background-color: #fcfcfc;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); /* Sombra interna sutil */
+    transition: border-color 0.3s;
+}
+
+.nova-tarefa-form input:focus,
+.nova-tarefa-form textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 1px var(--primary-color); /* Foco sutilmente azul */
+    background-color: white;
+}
+
+.nova-tarefa-form textarea {
+    resize: vertical;
+    min-height: 120px; /* Altura mínima para a descrição */
+}
+
+.form-group-row {
+    display: flex;
+    gap: 40px; /* Aumenta o espaçamento entre colunas */
+}
+
+/* --- BOTÕES DO RODAPÉ DO FORMULÁRIO (Form-Footer) --- */
+.form-footer-buttons {
+    display: flex;
+    justify-content: flex-end; 
+    gap: 15px; /* Espaçamento entre os botões */
+    padding-top: 25px;
+    margin-top: 25px;
+    border-top: 1px solid #f0f0f0; /* Linha divisória sutil */
+}
+
+/* Estilo Base dos Botões */
+.form-footer-buttons .action-btn {
+    width: auto; 
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+.cancel-btn {
+    background-color: #bdc3c7; /* Cinza mais neutro */
+    color: var(--text-color);
+}
+
+.cancel-btn:hover {
+    background-color: #95a5a6;
+    color: white;
+}
+
+.create-btn {
+    background-color: var(--done-color, #2ecc71); /* Verde vibrante */
+    color: white;
+    box-shadow: 0 4px 10px rgba(46, 204, 113, 0.4); /* Sombra que destaca */
+}
+
+.create-btn:hover {
+    background-color: #27ae60;
+    transform: translateY(-1px); /* Animação leve */
+    box-shadow: 0 6px 15px rgba(46, 204, 113, 0.5);
+}
