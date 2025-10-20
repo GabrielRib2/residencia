@@ -225,3 +225,35 @@ body {
 .visualizar-acoes-btn:hover {
     background-color: #34495e;
 }
+/* Estilos para agrupar e espaçar os botões abaixo do mapa */
+.action-buttons-map {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaçamento entre os botões */
+    width: 250px; /* Garante que os botões fiquem alinhados na mesma largura */
+}
+
+/* Estilo para o botão Visualizar Ações (principal) */
+.visualizar-acoes-btn {
+    background-color: var(--primary-color, #2c3e50);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1em;
+    width: 100%; /* Ocupa a largura do contêiner */
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    display: block;
+}
+
+/* Estilo para o novo botão (tarefas ativas) */
+.secondary-btn {
+    background-color: #2ecc71; /* Cor cinza, como sugerido antes */
+}
+
+.secondary-btn:hover {
+    background-color: #2ecc71;
+}
