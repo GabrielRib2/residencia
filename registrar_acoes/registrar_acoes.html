@@ -16,31 +16,19 @@
         <div class="logo">
           <h1>Menu Principal</h1>
         </div>
-        <nav class="nav-menu">
-          <ul>
-            <li>
-              <a href="../home/home.html"
-                ><i class="fas fa-home"></i> Dashboard</a
-              >
-            </li>
-            <li class="active">
-              <a href="../acoes.html"
-                ><i class="fas fa-chart-line"></i> Ações</a
-              >
-            </li>
-            <li>
-              <a href="../kanban/kanban.html"
-                ><i class="fas fa-tasks"></i> Gestão de Tarefas</a
-              >
-            </li>
-            <li>
-              <a href="../financeiro/financeiro.html"><i class="fas fa-dollar-sign"></i> Financeiro</a>
-            </li>
-            <li>
-              <a href="../configuracoes/configuracoes.html"><i class="fas fa-cog"></i> Configurações</a>
-            </li>
-          </ul>
-        </nav>
+<nav class="nav-menu">
+    <ul>
+        <li class="active"><a href="#"><i class="fas fa-home"></i> Dashboard</a></li>
+        <li><a href="../acoes/acoes.html"><i class="fas fa-chart-line"></i> Ações</a></li>
+        <li><a href="../kanban/kanban.html"><i class="fas fa-tasks"></i> Gestão de Tarefas</a></li>
+        <li><a href="../financeiro/financeiro.html"><i class="fas fa-dollar-sign"></i> Financeiro</a></li>
+        <li><a href="../configuracoes/configuracoes.html"><i class="fas fa-cog"></i> Configurações</a></li>
+        
+        <li id="assistant-toggle-btn">
+            <a href="#"><i class="fas fa-robot"></i> Assistente Virtual I.A.</a>
+        </li>
+    </ul>
+</nav>
         <div class="logout">
           <a href="../login/login.html"
             ><i class="fas fa-sign-out-alt"></i> Sair</a
@@ -116,5 +104,24 @@
       </main>
     </div>
     <script src="script.js"></script>
+    <div class="assistant-chat-panel" id="assistantChatPanel">
+    <div class="chat-header">
+        <h4>Assistente I.A.</h4>
+        <button class="close-chat-btn" id="closeChatBtn">&times;</button>
+    </div>
+    
+    <div class="chat-body" id="chatBody">
+        <div class="chat-message-ai">
+            Olá! Sou seu assistente de gerenciamento. Como posso te ajudar hoje?
+        </div>
+        </div>
+    
+    <div class="chat-footer">
+        <input type="text" id="chatInput" placeholder="Digite sua mensagem...">
+        <button id="sendChatBtn" class="send-chat-btn">
+            <i class="fas fa-paper-plane"></i>
+        </button>
+    </div>
+</div>
   </body>
 </html>
