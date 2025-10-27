@@ -43,68 +43,53 @@
                 </div>
             </header>
 
-            <section class="financeiro-container">
-                <div class="form-header-financeiro">
-                    <h3>Novo Registro Financeiro</h3>
-                    <button class="export-btn" id="exportBtn">
-                        <i class="fas fa-file-export"></i> EXPORTAR
-                    </button>
-                    <input type="file" id="fileInput" webkitdirectory directory multiple hidden>
-                </div>
-                
-                <form id="registroFinanceiroForm" class="registro-financeiro-form">
-                    
-                    <div class="form-group-row">
-                        <div class="form-group">
-                            <label for="dataRegistro">Data de Registro</label>
-                            <input type="date" id="dataRegistro" name="dataRegistro" value="2025-09-03">
-                        </div>
-                        <div class="form-group">
-                            <label for="valorLocacao">Valor da Locação do imóvel</label>
-                            <input type="text" id="valorLocacao" name="valorLocacao" placeholder="R$ 0.00">
-                        </div>
-                    </div>
+<section class="financeiro-container">
+    
+    <div class="form-header-financeiro">
+        <h3>Novo Registro Financeiro</h3>
+        <button class="export-btn"><i class="fas fa-file-export"></i> EXPORTAR</button>
+    </div>
 
-                    <div class="form-group-row">
-                        <div class="form-group">
-                            <label for="valorJuridica">Valor da Assessoria Jurídica</label>
-                            <input type="text" id="valorJuridica" name="valorJuridica" placeholder="R$ 0.00">
-                        </div>
-                        <div class="form-group">
-                            <label for="valorComunicacao">Valor da Assessoria de Comunicação</label>
-                            <input type="text" id="valorComunicacao" name="valorComunicacao" placeholder="R$ 0.00">
-                        </div>
-                    </div>
-
-                    <div class="form-group-row">
-                        <div class="form-group">
-                            <label for="valorCombustivel">Valor do Combustível</label>
-                            <input type="text" id="valorCombustivel" name="valorCombustivel" placeholder="R$ 0.00">
-                        </div>
-                        <div class="form-group">
-                            <label for="despesasDebito">Despesas do Débito</label>
-                            <input type="text" id="despesasDebito" name="despesasDebito" placeholder="R$ 0.00">
-                        </div>
-                    </div>
-                    
-                    <div class="form-group-row">
-                        <div class="form-group">
-                            <label for="despesasCredito">Despesas no Crédito</label>
-                            <input type="text" id="despesasCredito" name="despesasCredito" placeholder="R$ 0.00">
-                        </div>
-                        <div class="form-group">
-                            <label for="outrasDespesas">Outras Despesas</label>
-                            <input type="text" id="outrasDespesas" name="outrasDespesas" placeholder="R$ 0.00">
-                        </div>
-                    </div>
-                    
-                </form>
-                </form>
-
-            <div class="form-footer-financeiro">
-                <button type="submit" id="salvarInfoBtn" class="salvar-btn">Salvar Informações</button>
+    <form id="registroFinanceiroForm" class="registro-financeiro-form">
+        
+        <div class="form-group-row">
+            <div class="form-group">
+                <label for="dataRegistro">Data de Registro</label>
+                <input type="date" id="dataRegistro" name="dataRegistro" value="01/09/2025" required>
             </div>
-        </section> 
+            <div class="form-group">
+                <label for="valorDespesa">Valor da Despesa</label>
+                <input type="text" id="valorDespesa" name="valorDespesa" placeholder="R$ 0,00" required>
+            </div>
+        </div>
+
+        <div class="form-group-row">
+            <div class="form-group">
+                <label for="tipoTransacao">Tipo:</label>
+                <select id="tipoTransacao" name="tipoTransacao" required>
+                    <option value="">Selecione o Tipo</option>
+                    <option value="credito">Crédito</option>
+                    <option value="debito">Débito</option>
+                    <option value="pix">PIX</option>
+                    <option value="dinheiro">Dinheiro</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="categoria">Categoria</label>
+                <input type="text" id="categoria" name="categoria" placeholder="Ex: Combustível, Aluguel, Salário">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="descricao">Descrição</label>
+            <textarea id="descricao" name="descricao" rows="3" placeholder="Detalhes do registro financeiro (opcional)"></textarea>
+        </div>
+        
+        <div class="form-footer-buttons-financeiro">
+            <button type="submit" class="action-btn salvar-btn">Salvar Informações</button>
+        </div>
+    </form>
+</section>
         
         <section class="historico-transacoes-container">
             <h3>Histórico de Transações Recentes</h3>
