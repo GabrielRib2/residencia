@@ -16,29 +16,19 @@
         <div class="logo">
           <h1>Menu Principal</h1>
         </div>
-        <nav class="nav-menu">
-          <ul>
-            <li>
-              <a href="../home/home.html"
-                ><i class="fas fa-home"></i> Dashboard</a
-              >
-            </li>
-            <li class="active">
-              <a href="#"><i class="fas fa-chart-line"></i> Ações</a>
-            </li>
-            <li>
-              <a href="../kanban/kanban.html"
-                ><i class="fas fa-tasks"></i> Gestão de Tarefas</a
-              >
-            </li>
-            <li>
-              <a href="#"><i class="fas fa-dollar-sign"></i> Financeiro</a>
-            </li>
-            <li>
-              <a href="#"><i class="fas fa-cog"></i> Configurações</a>
-            </li>
-          </ul>
-        </nav>
+<nav class="nav-menu">
+    <ul>
+        <li><a href="../home/home.html"><i class="fas fa-home"></i> Dashboard</a></li>
+        <li><a href="../acoes/acoes.html"><i class="fas fa-chart-line"></i> Ações</a></li>
+        <li><a href="../kanban/kanban.html"><i class="fas fa-tasks"></i> Gestão de Tarefas</a></li>
+        <li><a href="../financeiro/financeiro.html"><i class="fas fa-dollar-sign"></i> Financeiro</a></li>
+        <li><a href="../configuracoes/configuracoes.html"><i class="fas fa-cog"></i> Configurações</a></li>
+        
+        <li id="assistant-toggle-btn">
+            <a href="#"><i class="fas fa-robot"></i> Assistente Virtual I.A.</a>
+        </li>
+    </ul>
+</nav>
         <div class="logout">
           <a href="../login/login.html"
             ><i class="fas fa-sign-out-alt"></i> Sair</a
@@ -57,38 +47,64 @@
         </header>
 
         <section class="acoes-content">
-          <div class="map-container">
-            <div class="map-embed">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15667.504997054773!2d-37.060698890601216!3d-10.972712336312453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1760269406667!5m2!1spt-BR!2sbr"
-                width="40%"
-                height="400"
-                style="border: 0"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
+         <div class="map-embed">
+    <span class="map-link-info">Ver mapa ampliado</span>
+    
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15667.504997054773!2d-37.060698890601216!3d-10.972712336312453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1760269406667!5m2!1spt-BR!2sbr" 
+        width="100%" 
+        height="600" 
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+    >
+    </iframe>
+
+    <div class="map-controls">
+        <button><i class="fas fa-search-plus"></i></button>
+        <button><i class="fas fa-search-minus"></i></button>
+        <button><i class="fas fa-search"></i></button>
+    </div>
+</div>
+
+          <div class="action-buttons-map">
+             <a
+                href="../acoes_registradas/acoes_registradas.html"
+                class="visualizar-acoes-btn primary-btn"
               >
-              </iframe>
-
-              <div class="map-controls">
-                <button><i class="fas fa-search-plus"></i></button>
-                <button><i class="fas fa-search-minus"></i></button>
-                <button><i class="fas fa-search"></i></button>
-              </div>
-            </div>
+                Visualizar Ações
+              </a>
+              <a
+                href="../kanban/kanban.html"
+                class="visualizar-acoes-btn secondary-btn"
+              >
+                Visualizar Tarefas Ativas
+              </a>
           </div>
-
-          <section class="acoes-content">
-            <a
-              href="../acoes_registradas/acoes_registradas.html"
-              class="visualizar-acoes-btn"
-            >
-              Visualizar Ações
-            </a>
-          </section>
+         
         </section>
       </main>
     </div>
     <script src="script.js"></script>
+    <div class="assistant-chat-panel" id="assistantChatPanel">
+    <div class="chat-header">
+        <h4>Assistente I.A.</h4>
+        <button class="close-chat-btn" id="closeChatBtn">&times;</button>
+    </div>
+    
+    <div class="chat-body" id="chatBody">
+        <div class="chat-message-ai">
+            Olá! Sou seu assistente de gerenciamento. Como posso te ajudar hoje?
+        </div>
+        </div>
+    
+    <div class="chat-footer">
+        <input type="text" id="chatInput" placeholder="Digite sua mensagem...">
+        <button id="sendChatBtn" class="send-chat-btn">
+            <i class="fas fa-paper-plane"></i>
+        </button>
+    </div>
+</div>
   </body>
 </html>

@@ -302,3 +302,372 @@ body {
     justify-content: center; /* Centraliza o conteúdo horizontalmente */
     align-items: center; /* Centraliza o conteúdo verticalmente */
 }
+/* --- ESTILOS ESPECÍFICOS DO KANBAN --- */
+
+.main-content {
+    /* Mantém o padding do main-content como 20px */
+    padding: 20px;
+    background-color: var(--background-color, #f5f7fa); /* Fundo sutilmente mais claro */
+}
+
+/* Ajustes no Header do Kanban (para simplificar) */
+.header {
+    /* Reutiliza o estilo de card/header suave do dashboard */
+    background-color: var(--card-background);
+    padding: 15px 25px; /* Padding ajustado */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.header-title h2 {
+    font-size: 1.6em; /* Aumenta o título principal */
+    font-weight: 700;
+}
+
+.header-breadcrumb {
+    /* Centraliza o breadcrumb (Início > Gestão) */
+    flex-grow: 1;
+    margin-left: 20px;
+    color: #999;
+}
+
+/* Botão Nova Tarefa - Mais moderno e suave */
+.new-task-btn {
+    background-color: var(--todo-color, #3498db); /* Usa o azul primário */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px; /* Bordas mais suaves */
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3); /* Sombra sutil colorida */
+}
+
+.new-task-btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px); /* Animação: levanta o botão */
+    box-shadow: 0 6px 15px rgba(52, 152, 219, 0.4);
+}
+
+
+/* --- LAYOUT PRINCIPAL DO KANBAN --- */
+.kanban-board {
+    display: flex;
+    gap: 20px;
+    flex-grow: 1;
+}
+
+.kanban-column {
+    flex: 1;
+    background-color: var(--card-background); /* Fundo branco para contrastar */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Sombra que levanta a coluna */
+    display: flex;
+    flex-direction: column;
+    min-width: 280px;
+    transition: box-shadow 0.3s ease;
+}
+
+.kanban-column:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Sombra mais intensa no hover */
+}
+
+/* Cabeçalho da Coluna */
+.column-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1em;
+    border-top-left-radius: 10px; /* Usa a borda do card */
+    border-top-right-radius: 10px;
+    /* Adiciona uma sombra interna sutil para dar profundidade à cor */
+    box-shadow: inset 0 -3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.column-header h3 {
+    margin: 0;
+    text-transform: uppercase; /* Deixa o texto em caixa alta, minimalista */
+    letter-spacing: 0.5px;
+}
+
+.task-count {
+    background-color: rgba(255, 255, 255, 0.25); /* Fundo mais sutil para o contador */
+    padding: 4px 10px;
+    border-radius: 12px; /* Transforma em pílula */
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+/* Lista e Cards de Tarefas */
+.task-list {
+    flex-grow: 1;
+    padding: 10px 15px 15px 15px; /* Ajusta o padding interno */
+    overflow-y: auto;
+}
+
+.task-card {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 8px; /* Bordas suaves */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* Sombra sutil para levantar o card */
+    cursor: grab;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-left: 5px solid var(--todo-color); /* Linha sutil que pode mudar de cor */
+}
+
+/* Ajusta a cor da linha lateral para cada coluna */
+#in-progress-column .task-card {
+    border-left-color: var(--in-progress-color, #f1c40f);
+}
+#done-column .task-card {
+    border-left-color: var(--done-color, #2ecc71);
+}
+
+
+.task-card:hover {
+    transform: translateY(-1px); /* Animação: Levanta o card ao passar o mouse */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.task-card h4 {
+    font-size: 1.05em;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 8px;
+}
+
+.task-card-footer {
+    font-size: 0.85em;
+    color: #7f8c8d;
+}
+
+.task-icons i {
+    color: #999;
+    transition: color 0.2s;
+}
+
+.task-icons i:hover {
+    color: var(--primary-color);
+}
+/* --- ESTILOS ESPECÍFICOS DA TELA NOVA TAREFA (GLOW UP) --- */
+
+.main-content {
+    background-color: var(--background-color, #f5f7fa); /* Fundo mais suave */
+}
+
+/* Header (Mantido o padrão de borda suave do Kanban) */
+.header {
+    /* Reutiliza o estilo de card/header suave do kanban */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    /* Mantém o padding, títulos e breadcrumb */
+}
+
+/* Container do Formulário */
+.form-container {
+    background-color: var(--card-background);
+    padding: 35px; /* Aumenta um pouco o padding para mais respiro */
+    border-radius: 12px; /* Borda suave */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Sombra sutil */
+    flex-grow: 1;
+}
+
+.nova-tarefa-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Aumenta o espaçamento entre os grupos de campos */
+}
+
+.nova-tarefa-form label {
+    font-weight: 600; /* Deixa o rótulo um pouco mais forte */
+    margin-bottom: 8px; /* Mais espaço abaixo do rótulo */
+    color: var(--text-color);
+    font-size: 0.95em;
+    display: block;
+}
+
+/* Estilo dos Inputs */
+.nova-tarefa-form input[type="text"],
+.nova-tarefa-form input[type="date"],
+.nova-tarefa-form textarea {
+    padding: 14px; /* Aumenta a altura dos campos */
+    border: 1px solid #e0e0e0;
+    border-radius: 8px; /* Borda mais suave */
+    font-size: 1em;
+    width: 100%;
+    background-color: #fcfcfc;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); /* Sombra interna sutil */
+    transition: border-color 0.3s;
+}
+
+.nova-tarefa-form input:focus,
+.nova-tarefa-form textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 1px var(--primary-color); /* Foco sutilmente azul */
+    background-color: white;
+}
+
+.nova-tarefa-form textarea {
+    resize: vertical;
+    min-height: 120px; /* Altura mínima para a descrição */
+}
+
+.form-group-row {
+    display: flex;
+    gap: 40px; /* Aumenta o espaçamento entre colunas */
+}
+
+/* --- BOTÕES DO RODAPÉ DO FORMULÁRIO (Form-Footer) --- */
+.form-footer-buttons {
+    display: flex;
+    justify-content: flex-end; 
+    gap: 15px; /* Espaçamento entre os botões */
+    padding-top: 25px;
+    margin-top: 25px;
+    border-top: 1px solid #f0f0f0; /* Linha divisória sutil */
+}
+
+/* Estilo Base dos Botões */
+.form-footer-buttons .action-btn {
+    width: auto; 
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+.cancel-btn {
+    background-color: #bdc3c7; /* Cinza mais neutro */
+    color: var(--text-color);
+}
+
+.cancel-btn:hover {
+    background-color: #95a5a6;
+    color: white;
+}
+
+.create-btn {
+    background-color: var(--done-color, #2ecc71); /* Verde vibrante */
+    color: white;
+    box-shadow: 0 4px 10px rgba(46, 204, 113, 0.4); /* Sombra que destaca */
+}
+
+.create-btn:hover {
+    background-color: #27ae60;
+    transform: translateY(-1px); /* Animação leve */
+    box-shadow: 0 6px 15px rgba(46, 204, 113, 0.5);
+}
+/* --- ESTILOS DO ASSISTENTE I.A. CHAT --- */
+
+.assistant-chat-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 350px; /* Largura do painel */
+    height: 100%;
+    background-color: var(--card-background, white);
+    box-shadow: -4px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 100; /* Garante que fique acima de tudo */
+    display: flex;
+    flex-direction: column;
+    
+    /* Estado inicial: Oculto (desliza para fora da tela) */
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.assistant-chat-panel.open {
+    /* Estado Aberto: Desliza para dentro */
+    transform: translateX(0);
+}
+
+/* Cabeçalho do Chat */
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: var(--primary-color, #2c3e50); /* Cor de fundo do cabeçalho */
+    color: white;
+    font-weight: 600;
+}
+
+.close-chat-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+    line-height: 1;
+}
+
+/* Corpo do Chat (Mensagens) */
+.chat-body {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background-color: #f7f7f7; /* Fundo levemente cinza para a área de chat */
+}
+
+.chat-message-ai, .chat-message-user {
+    max-width: 80%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 0.95em;
+    line-height: 1.4;
+}
+
+.chat-message-ai {
+    background-color: #e0f7fa; /* Azul claro para mensagens da IA */
+    color: #004d40;
+    align-self: flex-start;
+    margin-right: auto;
+}
+
+/* Rodapé do Chat (Input e Botão de Envio) */
+.chat-footer {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    background-color: var(--card-background, white);
+}
+
+#chatInput {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin-right: 10px;
+    outline: none;
+}
+
+.send-chat-btn {
+    background-color: var(--save-btn-color, #3498db);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.send-chat-btn:hover {
+    background-color: #2980b9;
+}
